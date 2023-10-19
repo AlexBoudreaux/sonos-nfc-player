@@ -1,9 +1,10 @@
 from src.nfc_reader import read_nfc_tag
-from src.spotify_controller import play_on_spotify
 from src.sonos_controller import play_on_sonos
 from src.supabase import fetch_spotify_id
+from dotenv import load_dotenv
 
 def main():
+    load_dotenv('.env.local')
 
     while True:
         tag = read_nfc_tag()
