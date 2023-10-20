@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import soco
 from soco.plugins.sharelink import SpotifyShare, ShareLinkPlugin
 from soco.exceptions import SoCoUPnPException
-from spotify_controller import get_liked_songs_by_artist_id, get_top_songs_by_artist_id
+from src.spotify_controller import get_liked_songs_by_artist_id, get_top_songs_by_artist_id
 from icecream import ic
 
 def get_sonos_speaker_by_name(speaker_name):
