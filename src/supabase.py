@@ -9,13 +9,12 @@ def init_supabase():
 
 def fetch_spotify_id(nfc_id):
     db = init_supabase()
-    tables = ['Artists', 'Albums', 'Playlists']
+    tables = ['artists', 'albums', 'playlists']
     media_types = ['artist', 'album', 'playlist']
 
     for table, media_type in zip(tables, media_types):
         result = db.table(table).select('spotify_id').eq('nfc_id', str(nfc_id)).execute()
-        print(result)
-        if result and len(result['data']) > 0:
-            return {"spotify_id": result['data'][0].get('spotify_id'), "media_type": media_type}
+        if result and result[0]:
+            return {"spotify_id": result[0].get('spotify_id'), "media_type": media_type}
 
     return None
