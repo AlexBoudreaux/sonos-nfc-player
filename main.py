@@ -1,4 +1,4 @@
-from src.nfc_reader import read_nfc_tag
+# from src.nfc_reader import read_nfc_tag
 from src.sonos_controller import play_on_sonos
 from src.supabase import fetch_spotify_id
 from dotenv import load_dotenv
