@@ -13,7 +13,7 @@ def fetch_spotify_id(nfc_id):
     media_types = ['artist', 'album', 'playlist']
 
     for table, media_type in zip(tables, media_types):
-        result = db.table(table).select('spotify_id').eq('nfc_id', nfc_id).execute()
+        result = db.table(table).select('spotify_id').eq('nfc_id', str(nfc_id)).execute()
         if result and result[0]:
             return {"spotify_id": result[0].get('spotify_id'), "media_type": media_type}
 

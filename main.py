@@ -11,6 +11,7 @@ def main():
     reader = SimpleMFRC522()
 
     while True:
+        print("Ready to read")
         tag_id = reader.read()[0]
         spotify_media = fetch_spotify_id(tag_id)
         print(spotify_media)
