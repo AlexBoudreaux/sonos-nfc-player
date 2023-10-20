@@ -15,8 +15,8 @@ def main():
         tag_id = reader.read()[0]
         spotify_media = fetch_spotify_id(tag_id)
         print(spotify_media)
-        # if spotify_media:
-        #     play_on_sonos(spotify_media)
+        if spotify_media:
+            play_on_sonos(spotify_media)
 
 if __name__ == "__main__":
     main()
