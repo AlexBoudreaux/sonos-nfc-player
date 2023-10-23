@@ -9,7 +9,6 @@ from mfrc522 import SimpleMFRC522
 
 def main():
 
-    # LED setup
     LED_PIN = 18
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(LED_PIN, GPIO.OUT)
@@ -25,7 +24,7 @@ def main():
         tag_id = reader.read()[0]
         blink_led(GPIO, LED_PIN)
         spotify_media = fetch_spotify_id(tag_id, all_media)
-        print(spotify_media)
+        print(f"Spotify ID: {spotify_media['spotify_id']}\nMedia Type: {spotify_media['media_type'].capitalize()}") 
         if spotify_media:
             play_on_sonos(spotify_media)
 
